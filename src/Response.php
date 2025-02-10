@@ -20,6 +20,8 @@ class Response
 
 	private $headers = [];
 
+	static private $instance;
+
 	private $config = [
 		'cookie_prefix' => '',
 		'cookie_domain' => '',
@@ -28,6 +30,14 @@ class Response
 		'cookie_http' => false,
 		'charset' => 'UTF-8'
 	];
+
+	static public function init()
+	{
+		if (!self::$instance) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
 
 
 	public function setConfig($config)
