@@ -9,6 +9,7 @@
 namespace EvolutionPHP\HTTP;
 
 use EvolutionPHP\HTTP\Lib\Download;
+use EvolutionPHP\Instance\Instance;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -152,8 +153,8 @@ class Response
 
 	public function refresh()
 	{
-		$req = new Request();
-		$this->redirect($req->current_url());
+		$request = Instance::get(Request::class);
+		$this->redirect($request->current_url());
 	}
 
 	public function redirect($url='', $status=302, $headers=[])

@@ -20,6 +20,7 @@
   },
   "require": {
     "php": ">=8.2",
+    "evolutionphp/instance": "@dev",
     "symfony/http-foundation": "v7.2.3"
   }
 }

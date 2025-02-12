@@ -5,15 +5,6 @@ use EvolutionPHP\HTTP\Lib\Req;
 class Request extends Req
 {
 	private $ip_address = false;
-	private static $instance;
-
-	static function init()
-	{
-		if(!self::$instance) {
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
 
 	// --------------------------------------------------------------------
 
